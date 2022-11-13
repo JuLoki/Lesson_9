@@ -1,38 +1,15 @@
 public class Task2 {
     public static void main(String[] args) {
-        int[] numbers = {2, 5, 7, 1, 10};
-        int sum = 0;
-        for (int x: numbers) {
-            sum += x;
-        }
+        int[] numbers = {2, 4, 6, 8, 10, 12};
+        int sum = sumRecursive(numbers, 0, 0);
         System.out.println(sum);
+    }
+
+    private static int sumRecursive(int[] numbers, int i, int sum) {
+        if (i + 1 == numbers.length) {
+            return sum + numbers[i];
+        } else {
+            return sumRecursive(numbers, i + 1, sum+numbers[i]);
+        }
     }
 }
-
-
-
-
-
-
-
-  /*      sum(numbers);
-        int sum = 0;
-        sumRecursive(numbers, sum);
-        System.out.println(sum);
-
-    }
-    private static void sumRecursive(int[] numbers, int sum) {
-        if (numbers.length == 0){
-            return;
-        }
-        sum += sumRecursive
-    }
-
-    private static void sum(int[] numbers) {
-        int sum = 0;
-        for (int number : numbers) {
-            sum += number;
-        }
-        System.out.println(sum);
-    }
-}*/
